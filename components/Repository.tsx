@@ -37,29 +37,31 @@ const SkeletonRepository = () => {
 export default function Repository({ repository }: { repository?: Repo}){
     if(!repository) return <SkeletonRepository/>
     return (
-        <div key={repository.id} className="cursor-pointer transition border border-1 border-gray-100 rounded-[0.75rem] py-2 px-4 hover:bg-slate-50">
-            <div className="flex flex-col gap-1">
-                <div className="flex flex-row justify-between">
-                    <div className="flex flex-row leading-none gap-2 text-sm">
-                        <FiGithub/>
-                        <p className="text-grey-800 font-medium">{repository.name}</p>
-                    </div>
-                    <div className="flex flex-row gap-1">
-                        <div className="flex flex-row leading-none gap-1">
-                            <VscRepoForked/>
-                            <p>{repository.forks_count}</p>
+        <a href={repository.html_url} target="_blank">
+            <div key={repository.id} className="cursor-pointer transition border border-1 border-gray-100 rounded-[0.75rem] py-2 px-4 hover:bg-slate-50">
+                <div className="flex flex-col gap-1">
+                    <div className="flex flex-row justify-between">
+                        <div className="flex flex-row leading-none gap-2 text-sm">
+                            <FiGithub/>
+                            <p className="text-grey-800 font-medium">{repository.name}</p>
                         </div>
-                        <div className="flex flex-row leading-none gap-1">
-                            <AiOutlineStar/>
-                            <p>{repository.stargazers_count}</p>
+                        <div className="flex flex-row gap-1">
+                            <div className="flex flex-row leading-none gap-1">
+                                <VscRepoForked/>
+                                <p>{repository.forks_count}</p>
+                            </div>
+                            <div className="flex flex-row leading-none gap-1">
+                                <AiOutlineStar/>
+                                <p>{repository.stargazers_count}</p>
+                            </div>
                         </div>
                     </div>
+                    <div>
+                        <LanguageBadge type={repository.language}/>
+                    </div>
+                    <p className="text-[0.875rem] text-grey-500">{repository.description || "No description"}</p>
                 </div>
-                <div>
-                    <LanguageBadge type='java'/>
-                </div>
-                <p className="text-[0.875rem] text-grey-500">{repository.description || "No description"}</p>
             </div>
-        </div>
+        </a>
     )
 }

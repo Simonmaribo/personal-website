@@ -11,13 +11,15 @@ export default function RepoBadge({ type }: { type: string }) {
 <span class="bg-pink-100 text-pink-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded dark:bg-pink-200 dark:text-pink-900">Pink</span>
 
 */
-    switch(type.toLowerCase()) {
+    switch(type?.toLowerCase()) {
         case 'typescript':
             return <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-lg">TypeScript</span>;
         case 'javascript':
             return <span className="bg-yellow-100 text-yellow-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-lg">JavaScript</span>;
         case 'java':
             return <span className="bg-orange-100 text-orange-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-lg">Java</span>;
+        case 'python':
+            return <span className="bg-indigo-100 text-indigo-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-lg">Python</span>;
         default:
             return <span className="bg-gray-100 text-gray-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded-lg">Tekst</span>
     }
