@@ -37,7 +37,7 @@ const SkeletonRepository = () => {
 export default function Repository({ repository }: { repository?: Repo}){
     if(!repository) return <SkeletonRepository/>
     return (
-        <a href={repository.html_url} target="_blank">
+        <a href={repository.html_url} target="_blank" rel="noreferrer">
             <div key={repository.id} className="cursor-pointer transition border border-1 border-gray-100 rounded-[0.75rem] py-2 px-4 hover:bg-slate-50">
                 <div className="flex flex-col gap-1">
                     <div className="flex flex-row justify-between">
