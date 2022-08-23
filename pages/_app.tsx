@@ -16,6 +16,7 @@ const queryClient = new QueryClient({
 
 // Import DayJS plugin
 import dayjs from 'dayjs';
+import Meta from '../components/Meta';
 require('dayjs/locale/en')
 
 var relativeTime = require('dayjs/plugin/relativeTime')
@@ -25,6 +26,7 @@ dayjs.locale('en')
 function App({ Component, pageProps }: AppProps) {
   return (
     <QueryClientProvider client={queryClient}>
+      <Meta/>
       <Component {...pageProps} />
       <ReactQueryDevtools/>
     </QueryClientProvider>
