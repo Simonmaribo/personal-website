@@ -23,7 +23,7 @@ export default function Header(){
                     <SocialIcon icon={<FaEnvelope size={25}/>} href="mailto:simonmaribo@outlook.dk"/>
                 </div>
             </div>
-            <img className="rounded-full flex-grow max-h-[224px]" src="https://avatars.githubusercontent.com/u/64478800" alt="Personal Image"/>
+            <img className="rounded-full flex-grow max-h-[224px]" src="./icon.png" alt="Personal Image"/>
         </div>
     )
 }
