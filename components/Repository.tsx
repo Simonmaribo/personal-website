@@ -3,6 +3,7 @@ import { VscRepoForked } from 'react-icons/vsc';
 import { AiOutlineStar } from 'react-icons/ai';
 import LanguageBadge from './LanguageBadge';
 import Repo from '../interfaces/github/Repo';
+import ArchiveBadge from './ArchieveBadge';
 
 
 const SkeletonRepository = () => {
@@ -40,6 +41,7 @@ export default function Repository({ repository }: { repository?: Repo}){
         <a href={repository.html_url} target="_blank" rel="noreferrer">
             <div key={repository.id} className="cursor-pointer transition border border-1 border-gray-100 rounded-[0.75rem] py-2 px-4 hover:bg-slate-50">
                 <div className="flex flex-col gap-1">
+                    {repository.archived == true && <ArchiveBadge/>}
                     <div className="flex flex-row justify-between">
                         <div className="flex flex-row leading-none gap-2 text-sm">
                             <FiGithub/>
