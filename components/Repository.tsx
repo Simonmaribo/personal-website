@@ -39,9 +39,8 @@ export default function Repository({ repository }: { repository?: Repo}){
     if(!repository) return <SkeletonRepository/>
     return (
         <a href={repository.html_url} target="_blank" rel="noreferrer">
-            <div key={repository.id} className="cursor-pointer transition border border-1 border-gray-100 rounded-[0.75rem] py-2 px-4 hover:bg-slate-50">
-                <div className="flex flex-col gap-1">
-                    {repository.archived == true && <ArchiveBadge/>}
+            <div key={repository.id} className="cursor-pointer transition border border-1 border-gray-100 rounded-[0.75rem] py-2 px-4 hover:bg-slate-50 flex flex-row">
+                <div className="flex flex-col gap-1 flex-grow">
                     <div className="flex flex-row justify-between">
                         <div className="flex flex-row leading-none gap-2 text-sm">
                             <FiGithub/>
@@ -62,6 +61,9 @@ export default function Repository({ repository }: { repository?: Repo}){
                         <LanguageBadge type={repository.language}/>
                     </div>
                     <p className="text-[0.875rem] text-grey-500">{repository.description || "No description"}</p>
+                </div>
+                <div className="rotate-90">
+                    {repository.archived == true && <ArchiveBadge/>}
                 </div>
             </div>
         </a>
