@@ -1,4 +1,3 @@
-import { MdLocationOn } from "react-icons/md";
 import { AiFillGithub } from 'react-icons/ai'
 import { FaDiscord, FaLinkedin, FaFacebookSquare, FaEnvelope } from 'react-icons/fa'
 
@@ -8,7 +7,6 @@ export default function Header(){
     return (
         <div className="flex flex-col-reverse gap-10 justify-between items-center md:flex-row">
             <div className="flex flex-col gap-4 mb-5">
-                <h1 className="text-grey-900 text-[30px] font-bold">Simon Maribo</h1>
                 <p className="text-grey-800">
                     Hej, mit navn er Simon, jeg er 16 år gammel og har kodet i diverse sprog siden jeg var 12. Hvis du har en ide til et projekt, så ikke tøv med at kontakte mig.</p>
                 <div className="flex flex-row gap-3">
